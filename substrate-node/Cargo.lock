@@ -3509,10 +3509,11 @@ dependencies = [
  "pallet-scheduler",
  "pallet-sudo",
  "pallet-tfgrid",
- "pallet-tft-bridge",
+ "pallet-tft-price",
  "pallet-timestamp",
  "pallet-transaction-payment",
  "pallet-transaction-payment-rpc-runtime-api",
+ "pallet-vesting-validator",
  "parity-scale-codec",
  "serde",
  "sp-api",
@@ -3801,7 +3802,7 @@ dependencies = [
 [[package]]
 name = "pallet-tfgrid"
 version = "3.0.0"
-source = "git+https://github.com/threefoldtech/substrate-pallets?branch=master#8414e3825ad77db417b7649e762e447f1ca99068"
+source = "git+https://github.com/threefoldtech/substrate-pallets?branch=master#ea4727f4f27639236cf48b1861f36b5dd6ffe9ae"
 dependencies = [
  "frame-support",
  "frame-system",
@@ -3818,9 +3819,9 @@ dependencies = [
 ]
 
 [[package]]
-name = "pallet-tft-bridge"
+name = "pallet-tft-price"
 version = "1.0.0"
-source = "git+https://github.com/threefoldfoundation/tft-parity?branch=main#82ca89509f4daef2e61dc490ab0dff4a70ce3b9c"
+source = "git+https://github.com/threefoldfoundation/tft-parity?branch=main#900b62c1cf5fd569f876dca69e4938bdbbe3f452"
 dependencies = [
  "frame-support",
  "frame-system",
@@ -3833,6 +3834,7 @@ dependencies = [
  "sp-runtime",
  "sp-std",
  "sp-storage",
+ "substrate-fixed",
 ]
 
 [[package]]
@@ -3899,6 +3901,23 @@ dependencies = [
  "parity-scale-codec",
  "sp-api",
  "sp-runtime",
+]
+
+[[package]]
+name = "pallet-vesting-validator"
+version = "1.0.0"
+dependencies = [
+ "frame-support",
+ "frame-system",
+ "lite-json",
+ "pallet-balances",
+ "pallet-timestamp",
+ "parity-scale-codec",
+ "sp-core",
+ "sp-io",
+ "sp-runtime",
+ "sp-std",
+ "sp-storage",
 ]
 
 [[package]]
@@ -7082,6 +7101,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "substrate-fixed"
+version = "0.5.6"
+source = "git+https://github.com/encointer/substrate-fixed#b33d186888c60f38adafcfc0ec3a21aab263aef1"
+dependencies = [
+ "parity-scale-codec",
+ "typenum",
+]
+
+[[package]]
 name = "substrate-frame-rpc-system"
 version = "3.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -7711,7 +7739,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "04f8ab788026715fa63b31960869617cba39117e520eb415b0139543e325ab59"
 dependencies = [
  "cfg-if 0.1.10",
- "rand 0.7.3",
+ "rand 0.3.23",
  "static_assertions",
 ]
 
